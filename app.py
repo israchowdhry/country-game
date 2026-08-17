@@ -59,3 +59,6 @@ def continent(continent_name):
         total_countries=total_countries,
         continent_name=continent_name
     )
+
+if __name__ == '__main__':
+    app.run()

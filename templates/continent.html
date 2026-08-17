@@ -1,41 +1,86 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
     <title>{{ continent_name }}</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
 </head>
 
 <body>
 
-    <h1>{{ continent_name }}</h1>
+<header>
 
-    <form method="POST">
-        <input
-            type="text"
-            name="country"
-            placeholder="Enter a country"
-        >
+    <h1>🌍 {{ continent_name }}</h1>
 
-        <button type="submit">Submit</button>
-    </form>
+</header>
 
-    <p>{{ message }}</p>
 
-    <p>
-        Countries found:
-        {{ guessed_countries|length }} / {{ total_countries }}
-    </p>
+<div class="container">
 
-    <h2>Countries Found</h2>
+    <div class="game-area">
 
-    <ul>
-        {% for country in guessed_countries %}
-            <li>{{ country }}</li>
-        {% endfor %}
-    </ul>
+        <h2>Name a Country</h2>
 
-    <p>
-        <a href="/">Back to Home</a>
-    </p>
+        <form method="POST">
+
+            <input
+                type="text"
+                name="country"
+                placeholder="Type a country..."
+                autocomplete="off"
+                autofocus
+            >
+
+        </form>
+
+
+        <p class="message">
+            {{ message }}
+        </p>
+
+
+        <p class="score">
+
+            Countries found:
+
+            <strong>
+                {{ guessed_countries|length }}
+                /
+                {{ total_countries }}
+            </strong>
+
+        </p>
+
+
+        <h2>Countries Found</h2>
+
+        <ul class="country-list">
+
+            {% for country in guessed_countries %}
+
+                <li>
+                    ✓ {{ country }}
+                </li>
+
+            {% endfor %}
+
+        </ul>
+
+
+        <a class="back-link" href="/">
+            ← Choose another continent
+        </a>
+
+    </div>
+
+</div>
 
 </body>
+
 </html>

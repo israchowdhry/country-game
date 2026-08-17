@@ -1,23 +1,55 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Country Game</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
 </head>
 
 <body>
 
-    <h1>Learn the Countries of the World</h1>
+<header>
+    <h1>🌎 Learn the Countries of the World</h1>
+    <p>How many countries can you name?</p>
+</header>
 
-    <p>Choose a continent:</p>
+<div class="container">
 
-    <ul>
-        <li><a href="/continent/Africa">Africa</a></li>
-        <li><a href="/continent/Asia">Asia</a></li>
-        <li><a href="/continent/Europe">Europe</a></li>
-        <li><a href="/continent/North%20America">North America</a></li>
-        <li><a href="/continent/South%20America">South America</a></li>
-        <li><a href="/continent/Oceania">Oceania</a></li>
-    </ul>
+    <h2>Choose a Continent</h2>
+
+    <div class="continent-links">
+
+        <a class="continent-button" href="/continent/Africa">
+            🌍 Africa
+        </a>
+
+        <a class="continent-button" href="/continent/Asia">
+            🌏 Asia
+        </a>
+
+        <a class="continent-button" href="/continent/Europe">
+            🌍 Europe
+        </a>
+
+        <a class="continent-button" href="/continent/North%20America">
+            🌎 North America
+        </a>
+
+        <a class="continent-button" href="/continent/South%20America">
+            🌎 South America
+        </a>
+
+        <a class="continent-button" href="/continent/Oceania">
+            🌏 Oceania
+        </a>
+
+    </div>
+
+</div>
 
 </body>
 </html>

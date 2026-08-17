@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdf6f0;
+    margin: 0;
+    text-align: center;
+    color: #333;
+}
+
+header {
+    background-color: #dbeafe;
+    padding: 25px;
+}
+
+h1 {
+    margin: 0;
+}
+
+.container {
+    width: 85%;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.continent-links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.continent-button {
+    text-decoration: none;
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    color: #333;
+    font-size: 20px;
+    border: 2px solid #dbeafe;
+}
+
+.continent-button:hover {
+    background-color: #dbeafe;
+}
+
+.game-area {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+input {
+    padding: 12px;
+    width: 250px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #93c5fd;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #60a5fa;
+}
+
+.message {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.score {
+    font-size: 18px;
+}
+
+.country-list {
+    list-style: none;
+    padding: 0;
+}
+
+.country-list li {
+    display: inline-block;
+    background-color: #dbeafe;
+    margin: 5px;
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+
+.map {
+    max-width: 600px;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 25px;
+}
