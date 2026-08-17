@@ -64,5 +64,11 @@ def continent(continent_name):
         continent_name=continent_name
     )
 
+@app.route("/reset")
+def reset():
+    session.pop("guessed_countries", None)
+    return render_template("index.html")
+
+
 if __name__ == '__main__':
     app.run()
