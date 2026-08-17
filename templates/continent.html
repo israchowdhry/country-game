@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ continent_name }}</title>
+</head>
+
+<body>
+
+    <h1>{{ continent_name }}</h1>
+
+    <form method="POST">
+        <input
+            type="text"
+            name="country"
+            placeholder="Enter a country"
+        >
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <p>{{ message }}</p>
+
+    <p>
+        Countries found:
+        {{ guessed_countries|length }} / {{ total_countries }}
+    </p>
+
+    <h2>Countries Found</h2>
+
+    <ul>
+        {% for country in guessed_countries %}
+            <li>{{ country }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>
+        <a href="/">Back to Home</a>
+    </p>
+
+</body>
+</html>
