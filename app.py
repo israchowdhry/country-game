@@ -1,19 +1,12 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session
 import json
 
 app = Flask(__name__)
 
+app.secret_key = "country-game-secret-key"
+
 with open("countries.json", "r") as file:
     countries = json.load(file)
-
-guessed_countries = {
-    "Africa": [],
-    "Asia": [],
-    "Europe": [],
-    "North America": [],
-    "South America": [],
-    "Oceania": []
-}
 
 # when someone visits (/), run the function underneath
 @app.route("/")
@@ -25,13 +18,23 @@ def home():
 def continent(continent_name):
     message = ""
 
+    if "guessed_countries" not in session:
+        session["guessed_countries"] = {
+            "Africa": [],
+            "Asia": [],
+            "Europe": [],
+            "North America": [],
+            "South America": [],
+            "Oceania": []
+        }
+
     continent_countries = []
 
     for country in countries:
         if country["continent"] == continent_name:
             continent_countries.append(country)
 
-    current_guesses = guessed_countries[continent_name]
+    current_guesses = session["guessed_countries"][continent_name]
 
     if request.method == "POST":
         country = request.form["country"].strip()
@@ -43,6 +46,7 @@ def continent(continent_name):
                     message = "You already found this country!"
                 else:
                     current_guesses.append(item["name"])
+                    session.modified = True
                     message = "Correct!"
 
                 break
