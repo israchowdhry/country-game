@@ -1,9 +1,10 @@
 from flask import Flask, render_template, request, session
 import json
+import os
 
 app = Flask(__name__)
 
-app.secret_key = "country-game-secret-key"
+app.secret_key = os.environ.get("SECRET_KEY")
 
 with open("countries.json", "r") as file:
     countries = json.load(file)
